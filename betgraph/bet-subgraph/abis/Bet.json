@@ -1,0 +1,546 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      { "name": "domain", "type": "string", "internalType": "string" }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  { "name": "A13e_RevokedAuthToken", "type": "error", "inputs": [] },
+  { "name": "SiweAuth_AddressMismatch", "type": "error", "inputs": [] },
+  { "name": "SiweAuth_ChainIdMismatch", "type": "error", "inputs": [] },
+  { "name": "SiweAuth_DomainMismatch", "type": "error", "inputs": [] },
+  { "name": "SiweAuth_Expired", "type": "error", "inputs": [] },
+  { "name": "SiweAuth_NotBeforeInFuture", "type": "error", "inputs": [] },
+  { "name": "SiweParser_InvalidAddressLength", "type": "error", "inputs": [] },
+  { "name": "SiweParser_InvalidNonce", "type": "error", "inputs": [] },
+  {
+    "name": "BetPlaced",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "betId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "user",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "totalAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "subBetCount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "index",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "BetResolved",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "betId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "status",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum Bet.BetStatus"
+      },
+      {
+        "name": "payout",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "FundsWithdrawn",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "user",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "SubBetPlaced",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "betId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "platform",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "marketId",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "outcome",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum Bet.BetOutcome"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "cancelBet",
+    "type": "function",
+    "inputs": [
+      { "name": "betId", "type": "uint256", "internalType": "uint256" },
+      { "name": "token", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "domain",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "string", "internalType": "string" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getAllBets",
+    "type": "function",
+    "inputs": [
+      { "name": "token", "type": "bytes", "internalType": "bytes" },
+      { "name": "offset", "type": "uint256", "internalType": "uint256" },
+      { "name": "count", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple[]",
+        "components": [
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          { "name": "user", "type": "address", "internalType": "address" },
+          {
+            "name": "totalAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "outcome",
+            "type": "uint8",
+            "internalType": "enum Bet.BetOutcome"
+          },
+          {
+            "name": "status",
+            "type": "uint8",
+            "internalType": "enum Bet.BetStatus"
+          },
+          { "name": "createdAt", "type": "uint256", "internalType": "uint256" },
+          { "name": "description", "type": "string", "internalType": "string" },
+          {
+            "name": "subBets",
+            "type": "tuple[]",
+            "components": [
+              {
+                "name": "platform",
+                "type": "string",
+                "internalType": "string"
+              },
+              {
+                "name": "amount",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "marketId",
+                "type": "string",
+                "internalType": "string"
+              },
+              {
+                "name": "outcome",
+                "type": "uint8",
+                "internalType": "enum Bet.BetOutcome"
+              },
+              {
+                "name": "status",
+                "type": "uint8",
+                "internalType": "enum Bet.BetStatus"
+              },
+              { "name": "payout", "type": "uint256", "internalType": "uint256" }
+            ],
+            "internalType": "struct Bet.SubBet[]"
+          },
+          {
+            "name": "totalPayout",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ],
+        "internalType": "struct Bet.BetInfo[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getBet",
+    "type": "function",
+    "inputs": [
+      { "name": "token", "type": "bytes", "internalType": "bytes" },
+      { "name": "betIndex", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "components": [
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          { "name": "user", "type": "address", "internalType": "address" },
+          {
+            "name": "totalAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "outcome",
+            "type": "uint8",
+            "internalType": "enum Bet.BetOutcome"
+          },
+          {
+            "name": "status",
+            "type": "uint8",
+            "internalType": "enum Bet.BetStatus"
+          },
+          { "name": "createdAt", "type": "uint256", "internalType": "uint256" },
+          { "name": "description", "type": "string", "internalType": "string" },
+          {
+            "name": "subBets",
+            "type": "tuple[]",
+            "components": [
+              {
+                "name": "platform",
+                "type": "string",
+                "internalType": "string"
+              },
+              {
+                "name": "amount",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "marketId",
+                "type": "string",
+                "internalType": "string"
+              },
+              {
+                "name": "outcome",
+                "type": "uint8",
+                "internalType": "enum Bet.BetOutcome"
+              },
+              {
+                "name": "status",
+                "type": "uint8",
+                "internalType": "enum Bet.BetStatus"
+              },
+              { "name": "payout", "type": "uint256", "internalType": "uint256" }
+            ],
+            "internalType": "struct Bet.SubBet[]"
+          },
+          {
+            "name": "totalPayout",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ],
+        "internalType": "struct Bet.BetInfo"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getBetSummary",
+    "type": "function",
+    "inputs": [
+      { "name": "token", "type": "bytes", "internalType": "bytes" },
+      { "name": "betId", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      { "name": "id", "type": "uint256", "internalType": "uint256" },
+      { "name": "user", "type": "address", "internalType": "address" },
+      { "name": "totalAmount", "type": "uint256", "internalType": "uint256" },
+      {
+        "name": "status",
+        "type": "uint8",
+        "internalType": "enum Bet.BetStatus"
+      },
+      { "name": "createdAt", "type": "uint256", "internalType": "uint256" },
+      { "name": "description", "type": "string", "internalType": "string" },
+      { "name": "subBetCount", "type": "uint256", "internalType": "uint256" },
+      { "name": "totalPayout", "type": "uint256", "internalType": "uint256" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getContractBalance",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getOwner",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getSubBets",
+    "type": "function",
+    "inputs": [
+      { "name": "token", "type": "bytes", "internalType": "bytes" },
+      { "name": "betId", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple[]",
+        "components": [
+          { "name": "platform", "type": "string", "internalType": "string" },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
+          { "name": "marketId", "type": "string", "internalType": "string" },
+          {
+            "name": "outcome",
+            "type": "uint8",
+            "internalType": "enum Bet.BetOutcome"
+          },
+          {
+            "name": "status",
+            "type": "uint8",
+            "internalType": "enum Bet.BetStatus"
+          },
+          { "name": "payout", "type": "uint256", "internalType": "uint256" }
+        ],
+        "internalType": "struct Bet.SubBet[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getTotalBets",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getUserBetCount",
+    "type": "function",
+    "inputs": [
+      { "name": "user", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getUserBets",
+    "type": "function",
+    "inputs": [
+      { "name": "token", "type": "bytes", "internalType": "bytes" },
+      { "name": "offset", "type": "uint256", "internalType": "uint256" },
+      { "name": "count", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple[]",
+        "components": [
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          { "name": "user", "type": "address", "internalType": "address" },
+          {
+            "name": "totalAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "outcome",
+            "type": "uint8",
+            "internalType": "enum Bet.BetOutcome"
+          },
+          {
+            "name": "status",
+            "type": "uint8",
+            "internalType": "enum Bet.BetStatus"
+          },
+          { "name": "createdAt", "type": "uint256", "internalType": "uint256" },
+          { "name": "description", "type": "string", "internalType": "string" },
+          {
+            "name": "subBets",
+            "type": "tuple[]",
+            "components": [
+              {
+                "name": "platform",
+                "type": "string",
+                "internalType": "string"
+              },
+              {
+                "name": "amount",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "marketId",
+                "type": "string",
+                "internalType": "string"
+              },
+              {
+                "name": "outcome",
+                "type": "uint8",
+                "internalType": "enum Bet.BetOutcome"
+              },
+              {
+                "name": "status",
+                "type": "uint8",
+                "internalType": "enum Bet.BetStatus"
+              },
+              { "name": "payout", "type": "uint256", "internalType": "uint256" }
+            ],
+            "internalType": "struct Bet.SubBet[]"
+          },
+          {
+            "name": "totalPayout",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ],
+        "internalType": "struct Bet.BetInfo[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "login",
+    "type": "function",
+    "inputs": [
+      { "name": "siweMsg", "type": "string", "internalType": "string" },
+      {
+        "name": "sig",
+        "type": "tuple",
+        "components": [
+          { "name": "r", "type": "bytes32", "internalType": "bytes32" },
+          { "name": "s", "type": "bytes32", "internalType": "bytes32" },
+          { "name": "v", "type": "uint256", "internalType": "uint256" }
+        ],
+        "internalType": "struct SignatureRSV"
+      }
+    ],
+    "outputs": [{ "name": "", "type": "bytes", "internalType": "bytes" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "ownerWithdraw",
+    "type": "function",
+    "inputs": [
+      { "name": "amount", "type": "uint256", "internalType": "uint256" },
+      { "name": "token", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "placeBet",
+    "type": "function",
+    "inputs": [
+      { "name": "description", "type": "string", "internalType": "string" },
+      {
+        "name": "outcome",
+        "type": "uint8",
+        "internalType": "enum Bet.BetOutcome"
+      },
+      { "name": "platforms", "type": "string[]", "internalType": "string[]" },
+      { "name": "amounts", "type": "uint256[]", "internalType": "uint256[]" },
+      { "name": "marketIds", "type": "string[]", "internalType": "string[]" }
+    ],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "name": "resolveBet",
+    "type": "function",
+    "inputs": [
+      { "name": "betId", "type": "uint256", "internalType": "uint256" },
+      { "name": "won", "type": "bool", "internalType": "bool" },
+      { "name": "token", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "transferContractBalance",
+    "type": "function",
+    "inputs": [
+      { "name": "to", "type": "address", "internalType": "address payable" },
+      { "name": "amount", "type": "uint256", "internalType": "uint256" },
+      { "name": "token", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "userBalances",
+    "type": "function",
+    "inputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "withdrawBalance",
+    "type": "function",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  }
+]
