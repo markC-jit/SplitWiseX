@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@oasisprotocol/sapphire-contracts": "^0.2.15"
+  }
+}
