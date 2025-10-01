@@ -1,6 +1,5 @@
 node_modules/
 .env
-nextjs/
 
 # Hardhat files
 /cache
