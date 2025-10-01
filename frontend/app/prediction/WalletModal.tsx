@@ -92,10 +92,10 @@ export default function WalletModal({ isOpen, onClose, onWalletConnected }: Wall
       const wsProvider = new WsProvider('wss://rpc.polkadot.io');
       const api = await ApiPromise.create({ provider: wsProvider });
 
-      // Get account balance - fix the destructuring
+      // Get account balance
       const accountInfo = await api.query.system.account(address);
-      const balance = accountInfo.data;
-      const balanceDot = (balance.free.toNumber() / 1e10).toFixed(4);
+      const balance = (accountInfo.toJSON() as any).data;
+      const balanceDot = (Number(balance.free) / 1e10).toFixed(4);
 
       await api.disconnect();
 

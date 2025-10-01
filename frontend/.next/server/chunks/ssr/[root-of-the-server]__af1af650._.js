@@ -1,0 +1,3 @@
+module.exports=[93695,(a,b,c)=>{b.exports=a.x("next/dist/shared/lib/no-fallback-error.external.js",()=>require("next/dist/shared/lib/no-fallback-error.external.js"))},73148,a=>{a.n(a.i(39257))},10378,(a,b,c)=>{},14283,a=>{"use strict";a.s(["default",()=>c]);var b=a.i(18332);function c(){return(0,b.jsx)("div",{className:"min-h-screen flex items-center justify-center",children:(0,b.jsxs)("div",{className:"text-center text-gray-600",children:[(0,b.jsx)("p",{children:"Visit a specific bet at /bet/[id]."}),(0,b.jsx)("a",{href:"/prediction",className:"text-blue-600 underline",children:"Go to Markets"})]})})}}];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__af1af650._.js.map

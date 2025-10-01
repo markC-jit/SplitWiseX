@@ -1,0 +1,8 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/bet/[id]/page": "/bet/[id]",
+  "/bet/page": "/bet",
+  "/page": "/",
+  "/prediction/page": "/prediction",
+  "/wallet/page": "/wallet"
+}
