@@ -1,8 +1,0 @@
-{
-  "arbitrum-sepolia": {
-    "Bet": {
-      "address": "0x4d166eb07E37b61BB42f56206cBa3ECb1872A340",
-      "startBlock": 199015095
-    }
-  }
-}
