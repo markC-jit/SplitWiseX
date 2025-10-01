@@ -1,0 +1,203 @@
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js >= 20.18.3
+- Yarn 3.2.3+
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/SplitWiseX.git
+   cd SplitWiseX
+   ```
+
+2. **Install dependencies**
+   ```bash
+   yarn install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
+
+4. **Start development servers**
+   ```bash
+   # Start the frontend
+   yarn start
+
+   # In another terminal, start local blockchain
+   yarn chain
+
+   # Deploy contracts
+   yarn deploy
+   ```
+
+### 🌐 Access the Application
+
+- **Frontend**: http://localhost:3000
+- **Hardhat Console**: http://localhost:8545
+
+## 🛠️ Development
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `yarn start` | Start Next.js development server |
+| `yarn build` | Build the application |
+| `yarn chain` | Start local Hardhat network |
+| `yarn deploy` | Deploy smart contracts |
+| `yarn test` | Run smart contract tests |
+| `yarn format` | Format code with Prettier |
+| `yarn lint` | Run ESLint |
+
+### Smart Contract Development
+
+```bash
+# Compile contracts
+yarn hardhat:compile
+
+# Run tests
+yarn hardhat:test
+
+# Deploy to testnet
+yarn hardhat:deploy --network sapphireTestnet
+
+# Generate TypeScript ABIs
+yarn hardhat:generate
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+# Blockchain Configuration
+__RUNTIME_DEPLOYER_PRIVATE_KEY=your_private_key_here
+ALCHEMY_API_KEY=your_alchemy_key_here
+ETHERSCAN_V2_API_KEY=your_etherscan_key_here
+
+# Network Configuration
+MAINNET_FORKING_ENABLED=false
+```
+
+### Supported Networks
+
+- **Local Development**: `localhost`, `hardhat`
+- **Ethereum**: `mainnet`, `sepolia`
+- **Layer 2**: `arbitrum`, `optimism`, `polygon`, `base`
+- **Privacy**: `sapphireTestnet` (Oasis Network)
+- **Polkadot**: Via SubWallet integration
+
+## 📱 Features
+
+### 🎯 Prediction Markets
+- Browse active prediction markets
+- Real-time odds and volume tracking
+- Historical data visualization
+- Category-based filtering
+
+### 💰 Betting Interface
+- Place YES/NO bets with custom amounts
+- Real-time payout calculations
+- Risk vs reward visualization
+- Portfolio tracking
+
+### 🔗 Wallet Integration
+- **MetaMask**: Ethereum ecosystem support
+- **SubWallet**: Polkadot ecosystem support
+- Cross-chain balance display
+- Secure transaction signing
+
+### 📊 Analytics Dashboard
+- Market performance metrics
+- Personal betting history
+- Profit/loss tracking
+- Market trend analysis
+
+## 🔒 Security
+
+- **Smart Contract Audits**: All contracts are thoroughly tested
+- **TEE Privacy**: Private betting strategies protected by Trusted Execution Environment
+- **Multi-Sig**: Critical operations require multiple signatures
+- **Access Control**: Role-based permissions system
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+yarn test
+
+# Run specific test suite
+yarn hardhat:test --grep "SimpleBet"
+
+# Coverage report
+yarn hardhat:coverage
+```
+
+## 📦 Deployment
+
+### Frontend Deployment
+
+```bash
+# Build for production
+yarn next:build
+
+# Deploy to Vercel
+yarn vercel
+
+# Deploy to IPFS
+yarn ipfs
+```
+
+### Smart Contract Deployment
+
+```bash
+# Deploy to testnet
+yarn deploy --network sapphireTestnet
+
+# Verify contracts
+yarn verify --network sapphireTestnet
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Oasis Network](https://oasisprotocol.org/) for TEE privacy technology
+- [Polkadot](https://polkadot.network/) for cross-chain infrastructure
+- [The Graph](https://thegraph.com/) for blockchain indexing
+- [Hardhat](https://hardhat.org/) for smart contract development
+
+## 📞 Support
+
+- **Documentation**: [docs.splitwisex.com](https://docs.splitwisex.com)
+- **Discord**: [Join our community](https://discord.gg/splitwisex)
+- **Twitter**: [@SplitWiseX](https://twitter.com/splitwisex)
+- **Email**: support@splitwisex.com
+
+---
+
+**Built with ❤️ by the SplitWise X team**
+
+*Empowering the future of decentralized prediction markets through AI and blockchain technology.*
