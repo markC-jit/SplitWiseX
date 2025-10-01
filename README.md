@@ -18,7 +18,7 @@ SplitWise X is a cross-chain prediction market aggregator that consolidates liqu
 |---------|-------------|
 | 🔗 Multi-Wallet Support | Connect with MetaMask (EVM) or SubWallet (Polkadot) |
 | 🧠 AI Rate Optimizer | Automatically computes the best odds across platforms (toggle ON/OFF) |
-| 🏦 Unified Liquidity | Aggregates data from The Graph, Oasis Sapphire, SubQuery, Zeitgeist |
+| 🏦 Unified Liquidity | Aggregates data from multiple prediction market |
 | 🔒 Privacy-Preserving | All computation happens inside Trusted Execution Environment (TEE) |
 
 ## 🏗️ Core Components
@@ -33,15 +33,15 @@ SplitWise X is a cross-chain prediction market aggregator that consolidates liqu
 - **Language**: Solidity ^0.8.20
 - **Privacy**: Oasis Sapphire TEE integration
 - **Authentication**: SiweAuth for privacy-preserving access
-- **Multi-platform**: Supports Polymarket, Augur, Gnosis
+- **Multi-platform**: Supports Polymarket, Zeitgeist, etc
 
 ### 3. Data Infrastructure
-- **Indexing**: The Graph Protocol subgraph
-- **Real-time**: WebSocket connections for live data
+- **Indexing**: The Graph Protocol subgraph, subquery
+- **Real-time**: WebSocket connections for live data, pyth network
 - **Analytics**: Custom orderbook aggregation
 
 ### 4. Cross-Chain Architecture
-- **EVM Chains**: Ethereum, Arbitrum, Optimism, Polygon, Base
+- **EVM Chains**: Ethereum
 - **Non-EVM**: Polkadot ecosystem via SubWallet
 - **Privacy Layer**: Oasis Sapphire for TEE operations
 
