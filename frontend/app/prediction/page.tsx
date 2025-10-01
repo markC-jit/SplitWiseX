@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from './Header';
+import { useRouter } from 'next/navigation';
 
 interface PredictionMarket {
   id: string;
@@ -13,6 +14,7 @@ interface PredictionMarket {
   totalVolume: number;
   category: string;
   status: 'active' | 'resolved' | 'pending';
+  chain: 'eth' | 'polkadot';
 }
 
 interface Bet {
@@ -25,17 +27,18 @@ interface Bet {
 }
 
 export default function PredictionPage() {
-  const [selectedMarket, setSelectedMarket] = useState<PredictionMarket | null>(null);
-  const [betChoice, setBetChoice] = useState<'yes' | 'no' | null>(null);
-  const [betAmount, setBetAmount] = useState<string>('');
   const [userBets, setUserBets] = useState<Bet[]>([]);
   const [activeTab, setActiveTab] = useState<'markets' | 'portfolio' | 'create'>('markets');
   const [userBalance, setUserBalance] = useState<number>(0);
   const [userName, setUserName] = useState<string>('Guest User');
-  const [isWalletConnected, setIsWalletConnected] = useState<boolean>(false);
+  const [walletAddress, setWalletAddress] = useState<string>('');
+  const [walletType, setWalletType] = useState<'metamask' | 'subwallet' | null>(null);
+  const [selectedChain, setSelectedChain] = useState<'all' | 'eth' | 'polkadot'>('all');
+  const router = useRouter();
 
   // Sample prediction markets data
-  const markets: PredictionMarket[] = [
+  const allMarkets: PredictionMarket[] = [
+    // Ethereum Markets
     {
       id: '1',
       title: 'Bitcoin will reach $100k by end of 2024',
@@ -45,7 +48,8 @@ export default function PredictionPage() {
       noOdds: 33,
       totalVolume: 1250,
       category: 'Crypto',
-      status: 'active'
+      status: 'active',
+      chain: 'eth'
     },
     {
       id: '2',
@@ -56,7 +60,8 @@ export default function PredictionPage() {
       noOdds: 55,
       totalVolume: 890,
       category: 'Stocks',
-      status: 'active'
+      status: 'active',
+      chain: 'eth'
     },
     {
       id: '3',
@@ -67,34 +72,65 @@ export default function PredictionPage() {
       noOdds: 22,
       totalVolume: 2100,
       category: 'Technology',
-      status: 'active'
+      status: 'active',
+      chain: 'eth'
+    },
+    // Polkadot Markets
+    {
+      id: '4',
+      title: 'DOT will reach $50 by end of 2024',
+      description: 'Will Polkadot (DOT) token price reach $50 USD by December 31, 2024?',
+      endDate: '2024-12-31',
+      yesOdds: 55,
+      noOdds: 45,
+      totalVolume: 680,
+      category: 'Crypto',
+      status: 'active',
+      chain: 'polkadot'
+    },
+    {
+      id: '5',
+      title: 'Polkadot will have 100+ parachains by 2025',
+      description: 'Will the Polkadot network have 100 or more active parachains by the end of 2025?',
+      endDate: '2025-12-31',
+      yesOdds: 72,
+      noOdds: 28,
+      totalVolume: 920,
+      category: 'Technology',
+      status: 'active',
+      chain: 'polkadot'
+    },
+    {
+      id: '6',
+      title: 'Kusama will process 10M transactions in Q3 2024',
+      description: 'Will the Kusama network process 10 million or more transactions in Q3 2024?',
+      endDate: '2024-09-30',
+      yesOdds: 63,
+      noOdds: 37,
+      totalVolume: 540,
+      category: 'Technology',
+      status: 'active',
+      chain: 'polkadot'
     }
   ];
 
-  const handlePlaceBet = () => {
-    if (!selectedMarket || !betChoice || !betAmount) return;
-    
-    const newBet: Bet = {
-      id: Date.now().toString(),
-      marketId: selectedMarket.id,
-      choice: betChoice,
-      amount: parseFloat(betAmount),
-      timestamp: new Date().toISOString(),
-      potentialPayout: betChoice === 'yes' 
-        ? parseFloat(betAmount) * (100 / selectedMarket.yesOdds)
-        : parseFloat(betAmount) * (100 / selectedMarket.noOdds)
-    };
-    
-    setUserBets([...userBets, newBet]);
-    setBetAmount('');
-    setBetChoice(null);
+  // Filter markets based on selected chain
+  const markets = selectedChain === 'all' 
+    ? allMarkets 
+    : allMarkets.filter(market => market.chain === selectedChain);
+
+  const handleWalletConnected = (walletType: 'metamask' | 'subwallet', address: string, balance: string) => {
+    setWalletType(walletType);
+    setWalletAddress(address);
+    setUserBalance(parseFloat(balance));
+    setUserName(walletType === 'metamask' ? 'ETH Wallet' : 'DOT Wallet');
   };
 
-  const handleConnectWallet = () => {
-    // Simulate wallet connection
-    setIsWalletConnected(true);
-    setUserName('CryptoTrader');
-    setUserBalance(2.4567);
+  const handleWalletDisconnect = () => {
+    setWalletType(null);
+    setWalletAddress('');
+    setUserBalance(0);
+    setUserName('Guest User');
   };
 
   const getCategoryColor = (category: string) => {
@@ -108,26 +144,30 @@ export default function PredictionPage() {
     return colors[category] || 'bg-gray-100 text-gray-800';
   };
 
+  const getCurrencySymbol = () => {
+    if (walletType === 'metamask') return 'ETH';
+    if (walletType === 'subwallet') return 'DOT';
+    return 'ETH'; // default fallback
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-blue-100">
       {/* Header Component */}
       <Header 
         userBalance={userBalance}
         userName={userName}
-        onConnectWallet={handleConnectWallet}
+        walletAddress={walletAddress}
+        walletType={walletType}
+        onWalletConnected={handleWalletConnected}
+        onWalletDisconnect={handleWalletDisconnect}
       />
       
-      <div className="p-4">
+      <div className="p-6">
         <div className="max-w-7xl mx-auto">
-          {/* Main Content Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-6xl font-bold text-gray-800 mb-4">📊</h1>
-            <p className="text-xl text-gray-600">Prediction Market</p>
-          </div>
 
           {/* Navigation Tabs */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
-            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-8 mb-10 border border-white/50">
+            <div className="flex space-x-2 bg-gradient-to-r from-blue-50 to-sky-100 p-1.5 rounded-2xl">
               {[
                 { id: 'markets', label: 'Markets', icon: '🏪' },
                 { id: 'portfolio', label: 'Portfolio', icon: '💼' },
@@ -136,13 +176,13 @@ export default function PredictionPage() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`flex-1 py-3 px-4 rounded-md font-medium transition-all ${
+                  className={`flex-1 py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
                     activeTab === tab.id
-                      ? 'bg-white text-blue-600 shadow-sm'
-                      : 'text-gray-600 hover:text-gray-800'
+                      ? 'bg-gradient-to-r from-blue-500 to-sky-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                      : 'text-gray-600 hover:text-gray-800 hover:bg-white/50'
                   }`}
                 >
-                  <span className="mr-2">{tab.icon}</span>
+                  <span className="mr-2 text-xl">{tab.icon}</span>
                   {tab.label}
                 </button>
               ))}
@@ -151,148 +191,153 @@ export default function PredictionPage() {
 
           {/* Markets Tab */}
           {activeTab === 'markets' && (
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="space-y-8">
               {/* Markets List */}
-              <div className="bg-white rounded-2xl shadow-xl p-6">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-6">Active Markets</h2>
-                <div className="space-y-4">
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-blue-200">
+                <div className="flex justify-between items-center mb-8">
+                  <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">Active Markets</h2>
+                  
+                  {/* Chain Selector Dropdown */}
+                  <div className="relative">
+                    <button
+                      onClick={() => {
+                        const dropdown = document.getElementById('chain-dropdown');
+                        if (dropdown) {
+                          dropdown.classList.toggle('hidden');
+                        }
+                      }}
+                      className="flex items-center gap-2 bg-white border-2 border-gray-300 rounded-xl px-4 py-2.5 text-sm font-medium text-gray-700 hover:border-sky-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer transition-all min-w-[160px]"
+                    >
+                      {selectedChain === 'all' ? (
+                        <>
+                          <div className="w-5 h-5 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center">
+                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            </svg>
+                          </div>
+                          <span>Combined Markets</span>
+                        </>
+                      ) : selectedChain === 'eth' ? (
+                        <>
+                          <div className="w-5 h-5 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                          </div>
+                          <span>Individual Markets</span>
+                        </>
+                      ) : (
+                        <>
+                          <div className="w-5 h-5 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                          </div>
+                          <span>Individual Markets</span>
+                        </>
+                      )}
+                      <svg className="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    
+                                         {/* Dropdown Menu */}
+                     <div
+                       id="chain-dropdown"
+                       className="hidden absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-200 py-2 z-10"
+                     >
+                       {/* Combined Markets Option */}
+                       <button
+                         onClick={() => {
+                           setSelectedChain('all');
+                           document.getElementById('chain-dropdown')?.classList.add('hidden');
+                         }}
+                         className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors ${
+                           selectedChain === 'all' ? 'bg-blue-50' : ''
+                         }`}
+                       >
+                         <div className="w-6 h-6 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center">
+                           <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                             <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                           </svg>
+                         </div>
+                         <span className="font-medium text-gray-900">Combined Markets</span>
+                         {selectedChain === 'all' && (
+                           <svg className="w-5 h-5 ml-auto text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                           </svg>
+                         )}
+                       </button>
+
+                       {/* Divider */}
+                       <div className="border-t border-gray-200 my-2"></div>
+
+                       {/* Individual Markets Option */}
+                       <button
+                         onClick={() => {
+                           setSelectedChain('eth');
+                           document.getElementById('chain-dropdown')?.classList.add('hidden');
+                         }}
+                         className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors ${
+                           selectedChain === 'eth' ? 'bg-blue-50' : ''
+                         }`}
+                       >
+                        <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                          </svg>
+                        </div>
+                        <span className="font-medium text-gray-900">Individual Markets</span>
+                        {selectedChain === 'eth' && (
+                          <svg className="w-5 h-5 ml-auto text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                          </svg>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {markets.map((market) => (
                     <div
                       key={market.id}
-                      onClick={() => setSelectedMarket(market)}
-                      className={`p-4 rounded-xl border-2 cursor-pointer transition-all hover:shadow-md ${
-                        selectedMarket?.id === market.id
-                          ? 'border-blue-500 bg-blue-50'
-                          : 'border-gray-200 hover:border-gray-300'
-                      }`}
+                      onClick={() => router.push(`/bet/${market.id}`)}
+                      className="group w-full h-full p-6 rounded-2xl bg-gradient-to-br from-white to-blue-50 border-2 border-blue-200 cursor-pointer transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/20 hover:border-blue-400 hover:-translate-y-1"
                     >
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="font-semibold text-gray-800 text-lg">{market.title}</h3>
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(market.category)}`}>
+                      <div className="flex justify-between items-start mb-3">
+                        <h3 className="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition-colors">{market.title}</h3>
+                        <span className={`px-3 py-1.5 rounded-full text-xs font-semibold shadow-sm ${getCategoryColor(market.category)}`}>
                           {market.category}
                         </span>
                       </div>
-                      <p className="text-gray-600 text-sm mb-3">{market.description}</p>
-                      <div className="flex justify-between items-center text-sm">
-                        <span className="text-gray-500">Ends: {market.endDate}</span>
-                        <span className="text-gray-500">Volume: {market.totalVolume} ETH</span>
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-2">{market.description}</p>
+                      <div className="flex justify-between items-center text-sm mb-4">
+                        <span className="text-gray-500 flex items-center gap-1">
+                          <span>📅</span>
+                          {market.endDate}
+                        </span>
                       </div>
-                      <div className="flex justify-between mt-3">
-                        <div className="text-center">
-                          <div className="text-green-600 font-bold">{market.yesOdds}%</div>
-                          <div className="text-xs text-gray-500">YES</div>
+                      <div className="flex gap-3 mt-4">
+                        <div className="flex-1 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-3 border border-green-200">
+                          <div className="text-green-600 font-bold text-xl">{market.yesOdds}%</div>
+                          <div className="text-xs text-green-700 font-medium">YES</div>
                         </div>
-                        <div className="text-center">
-                          <div className="text-red-600 font-bold">{market.noOdds}%</div>
-                          <div className="text-xs text-gray-500">NO</div>
+                        <div className="flex-1 bg-gradient-to-br from-red-50 to-rose-50 rounded-xl p-3 border border-red-200">
+                          <div className="text-red-600 font-bold text-xl">{market.noOdds}%</div>
+                          <div className="text-xs text-red-700 font-medium">NO</div>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-
-              {/* Market Details & Betting */}
-              {selectedMarket && (
-                <div className="bg-white rounded-2xl shadow-xl p-6">
-                  <h2 className="text-2xl font-semibold text-gray-800 mb-6">Market Details</h2>
-                  
-                  <div className="mb-6">
-                    <h3 className="font-semibold text-lg mb-2">{selectedMarket.title}</h3>
-                    <p className="text-gray-600 mb-4">{selectedMarket.description}</p>
-                    
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                      <div className="bg-green-50 rounded-lg p-4 text-center">
-                        <div className="text-2xl font-bold text-green-600">{selectedMarket.yesOdds}%</div>
-                        <div className="text-sm text-gray-600">YES Odds</div>
-                        <div className="text-xs text-gray-500">+{((100/selectedMarket.yesOdds) - 1).toFixed(1)}x</div>
-                      </div>
-                      <div className="bg-red-50 rounded-lg p-4 text-center">
-                        <div className="text-2xl font-bold text-red-600">{selectedMarket.noOdds}%</div>
-                        <div className="text-sm text-gray-600">NO Odds</div>
-                        <div className="text-xs text-gray-500">+{((100/selectedMarket.noOdds) - 1).toFixed(1)}x</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Betting Interface */}
-                  <div className="space-y-4">
-                    <h4 className="font-semibold text-gray-800">Place Your Bet</h4>
-                    
-                    <div className="grid grid-cols-2 gap-4">
-                      <button
-                        onClick={() => setBetChoice('yes')}
-                        className={`p-4 rounded-xl border-2 transition-all ${
-                          betChoice === 'yes'
-                            ? 'border-green-500 bg-green-50'
-                            : 'border-gray-200 hover:border-green-300'
-                        }`}
-                      >
-                        <div className="text-center">
-                          <div className="text-2xl mb-2">📈</div>
-                          <div className="font-semibold text-green-600">YES</div>
-                          <div className="text-xs text-gray-600">Price will go up</div>
-                        </div>
-                      </button>
-
-                      <button
-                        onClick={() => setBetChoice('no')}
-                        className={`p-4 rounded-xl border-2 transition-all ${
-                          betChoice === 'no'
-                            ? 'border-red-500 bg-red-50'
-                            : 'border-gray-200 hover:border-red-300'
-                        }`}
-                      >
-                        <div className="text-center">
-                          <div className="text-2xl mb-2">📉</div>
-                          <div className="font-semibold text-red-600">NO</div>
-                          <div className="text-xs text-gray-600">Price will go down</div>
-                        </div>
-                      </button>
-                    </div>
-
-                    {betChoice && (
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Bet Amount (ETH)
-                        </label>
-                        <input
-                          type="number"
-                          value={betAmount}
-                          onChange={(e) => setBetAmount(e.target.value)}
-                          placeholder="0.1"
-                          step="0.01"
-                          min="0"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        />
-                        {betAmount && (
-                          <div className="mt-2 text-sm text-gray-600">
-                            Potential payout: {(
-                              parseFloat(betAmount) * (100 / (betChoice === 'yes' ? selectedMarket.yesOdds : selectedMarket.noOdds))
-                            ).toFixed(4)} ETH
-                          </div>
-                        )}
-                      </div>
-                    )}
-
-                    {betChoice && betAmount && (
-                      <button
-                        onClick={handlePlaceBet}
-                        className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl"
-                      >
-                        Place Bet ({betChoice.toUpperCase()}) - {betAmount} ETH
-                      </button>
-                    )}
-                  </div>
-                </div>
-              )}
             </div>
           )}
 
           {/* Portfolio Tab */}
           {activeTab === 'portfolio' && (
-            <div className="bg-white rounded-2xl shadow-xl p-6">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-6">Your Portfolio</h2>
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white/50">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-8">Your Portfolio</h2>
               
               {userBets.length === 0 ? (
                 <div className="text-center py-12">
@@ -317,11 +362,11 @@ export default function PredictionPage() {
                         <div className="grid grid-cols-3 gap-4 text-sm">
                           <div>
                             <div className="text-gray-500">Amount</div>
-                            <div className="font-semibold">{bet.amount} ETH</div>
+                            <div className="font-semibold">{bet.amount} {getCurrencySymbol()}</div>
                           </div>
                           <div>
                             <div className="text-gray-500">Potential Payout</div>
-                            <div className="font-semibold">{bet.potentialPayout.toFixed(4)} ETH</div>
+                            <div className="font-semibold">{bet.potentialPayout.toFixed(4)} {getCurrencySymbol()}</div>
                           </div>
                           <div>
                             <div className="text-gray-500">Date</div>
@@ -338,8 +383,8 @@ export default function PredictionPage() {
 
           {/* Create Market Tab */}
           {activeTab === 'create' && (
-            <div className="bg-white rounded-2xl shadow-xl p-6">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-6">Create New Market</h2>
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white/50">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-8">Create New Market</h2>
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Market Title</label>
@@ -376,7 +421,7 @@ export default function PredictionPage() {
                     />
                   </div>
                 </div>
-                <button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-green-700 hover:to-emerald-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                <button className="w-full bg-gradient-to-r from-blue-500 to-sky-500 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-sky-600 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105">
                   Create Market
                 </button>
               </div>
