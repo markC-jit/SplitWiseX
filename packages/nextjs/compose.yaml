@@ -1,9 +1,0 @@
-services:
-  ethclbet:
-    build: .
-    image: "docker.io/cedricctf11a/betting-server/general"
-    platform: linux/amd64
-    environment:
-      - TOKEN=${TOKEN}
-    volumes:
-      - /run/rofl-appd.sock:/run/rofl-appd.sock
