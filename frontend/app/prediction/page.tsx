@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Header from './Header';
 import { useRouter } from 'next/navigation';
+import { useWallet } from '../contexts/WalletContext';
 
 interface PredictionMarket {
   id: string;
@@ -29,12 +30,11 @@ interface Bet {
 export default function PredictionPage() {
   const [userBets, setUserBets] = useState<Bet[]>([]);
   const [activeTab, setActiveTab] = useState<'markets' | 'portfolio' | 'create'>('markets');
-  const [userBalance, setUserBalance] = useState<number>(0);
-  const [userName, setUserName] = useState<string>('Guest User');
-  const [walletAddress, setWalletAddress] = useState<string>('');
-  const [walletType, setWalletType] = useState<'metamask' | 'subwallet' | null>(null);
   const [selectedChain, setSelectedChain] = useState<'all' | 'eth' | 'polkadot'>('all');
   const router = useRouter();
+  
+  // Use the wallet context instead of local state
+  const { userBalance, userName, walletAddress, walletType } = useWallet();
 
   // Sample prediction markets data
   const allMarkets: PredictionMarket[] = [
@@ -119,20 +119,6 @@ export default function PredictionPage() {
     ? allMarkets 
     : allMarkets.filter(market => market.chain === selectedChain);
 
-  const handleWalletConnected = (walletType: 'metamask' | 'subwallet', address: string, balance: string) => {
-    setWalletType(walletType);
-    setWalletAddress(address);
-    setUserBalance(parseFloat(balance));
-    setUserName(walletType === 'metamask' ? 'ETH Wallet' : 'DOT Wallet');
-  };
-
-  const handleWalletDisconnect = () => {
-    setWalletType(null);
-    setWalletAddress('');
-    setUserBalance(0);
-    setUserName('Guest User');
-  };
-
   const getCategoryColor = (category: string) => {
     const colors: { [key: string]: string } = {
       'Crypto': 'bg-orange-100 text-orange-800',
@@ -152,15 +138,8 @@ export default function PredictionPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-blue-100">
-      {/* Header Component */}
-      <Header 
-        userBalance={userBalance}
-        userName={userName}
-        walletAddress={walletAddress}
-        walletType={walletType}
-        onWalletConnected={handleWalletConnected}
-        onWalletDisconnect={handleWalletDisconnect}
-      />
+      {/* Header Component - no props needed */}
+      <Header />
       
       <div className="p-6">
         <div className="max-w-7xl mx-auto">

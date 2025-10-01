@@ -1,32 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
-import WalletModal from "./WalletModal";
+import React from "react";
+import { useRouter } from "next/navigation";
 import { useWallet } from "../contexts/WalletContext";
 
 export default function Header() {
-  const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
+  const router = useRouter();
   const { 
     userBalance, 
     userName, 
     walletAddress, 
     walletType, 
     isConnected,
-    connectWallet,
     disconnectWallet 
   } = useWallet();
 
   const handleConnectClick = () => {
-    setIsWalletModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsWalletModalOpen(false);
-  };
-
-  const handleWalletConnect = (walletType: "metamask" | "subwallet", address: string, balance: string) => {
-    connectWallet(walletType, address, balance);
-    setIsWalletModalOpen(false);
+    // Redirect to wallet connection page instead of opening modal
+    router.push('/wallet');
   };
 
   const handleDisconnect = () => {
@@ -140,13 +131,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-
-      {/* Wallet Connection Modal */}
-      <WalletModal 
-        isOpen={isWalletModalOpen}
-        onClose={handleCloseModal}
-        onWalletConnected={handleWalletConnect}
-      />
     </header>
   );
 }

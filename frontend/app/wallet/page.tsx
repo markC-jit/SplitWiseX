@@ -1,16 +1,14 @@
+'use client';
+
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useWallet } from '../contexts/WalletContext';
 
-interface WalletModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onWalletConnected?: (walletType: 'metamask' | 'subwallet', address: string, balance: string) => void;
-}
-
-export default function WalletModal({ isOpen, onClose, onWalletConnected }: WalletModalProps) {
+export default function WalletPage() {
   const [isConnecting, setIsConnecting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  if (!isOpen) return null;
+  const router = useRouter();
+  const { connectWallet } = useWallet();
 
   const connectMetaMask = async () => {
     setIsConnecting(true);
@@ -43,11 +41,10 @@ export default function WalletModal({ isOpen, onClose, onWalletConnected }: Wall
       const balanceWei = parseInt(balanceHex, 16);
       const balanceEth = (balanceWei / 1e18).toFixed(4);
 
-      if (onWalletConnected) {
-        onWalletConnected('metamask', address, balanceEth);
-      }
-
-      onClose();
+      connectWallet('metamask', address, balanceEth);
+      
+      // Redirect to prediction page after successful connection
+      router.push('/prediction');
     } catch (err: any) {
       console.error('MetaMask connection error:', err);
       setError(err.message || 'Failed to connect to MetaMask');
@@ -99,11 +96,10 @@ export default function WalletModal({ isOpen, onClose, onWalletConnected }: Wall
 
       await api.disconnect();
 
-      if (onWalletConnected) {
-        onWalletConnected('subwallet', address, balanceDot);
-      }
-
-      onClose();
+      connectWallet('subwallet', address, balanceDot);
+      
+      // Redirect to prediction page after successful connection
+      router.push('/prediction');
     } catch (err: any) {
       console.error('SubWallet connection error:', err);
       setError(err.message || 'Failed to connect to SubWallet');
@@ -120,33 +116,50 @@ export default function WalletModal({ isOpen, onClose, onWalletConnected }: Wall
     }
   };
 
+  const handleBackClick = () => {
+    router.back();
+  };
+
   return (
-    <>
-      {/* Backdrop */}
-      <div 
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity"
-        onClick={onClose}
-      />
-      
-      {/* Modal */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div 
-          className="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden transform transition-all"
-          onClick={(e) => e.stopPropagation()}
-        >
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-blue-100">
+      {/* Header */}
+      <div className="bg-white/95 backdrop-blur-sm shadow-lg border-b border-blue-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo and Brand */}
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-sky-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">📊</span>
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold text-gray-900">SplitWiseX</h1>
+                  <p className="text-xs text-gray-500">Prediction Markets</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Back Button */}
+            <button
+              onClick={handleBackClick}
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Back
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] p-6">
+        <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden">
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-5">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold text-white">Connect Wallet</h2>
-              <button
-                onClick={onClose}
-                disabled={isConnecting}
-                className="text-white/80 hover:text-white transition-colors disabled:opacity-50"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
             </div>
             <p className="text-blue-100 text-sm mt-2">Choose your preferred wallet to connect</p>
           </div>
@@ -248,7 +261,7 @@ export default function WalletModal({ isOpen, onClose, onWalletConnected }: Wall
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

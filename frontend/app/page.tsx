@@ -37,7 +37,7 @@ export default function LandingPage() {
 
           {/* Main Title */}
           <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-sky-500 to-blue-700 bg-clip-text text-transparent mb-8 animate-fade-in">
-            WAGMI Market
+            SplitWiseX
           </h1>
 
           {/* Introduction */}
