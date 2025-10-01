@@ -166,7 +166,7 @@ yarn start
 ## 🏗️ Architecture
 
 ### System Overview
-*[Architecture diagram would go here]*
+![System Architecture](./frontend/public/system.png)
 
 ---
 
