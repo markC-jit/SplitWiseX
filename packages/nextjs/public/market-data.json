@@ -1,0 +1,1182 @@
+{
+  "timestamp": "2025-08-06T05:40:34.402Z",
+  "totalMarkets": 20,
+  "polymarketCount": 10,
+  "omenCount": 10,
+  "individualMarkets": [
+    {
+      "id": "0xfff91c2a99c4c677ee72b61ec5b2759305125c7d4a8ce97c33db424dc2f40efe",
+      "title": "Rangers vs. Mariners - In the upcoming MLB game, scheduled for July 31 at 9:40PM ET:\nIf the Texas Rangers win, the market will resolve to “Rangers”.",
+      "originalTitle": "Rangers vs. Mariners - In the upcoming MLB game, scheduled for July 31 at 9:40PM ET:\nIf the Texas Rangers win, the market will resolve to “Rangers”.",
+      "creator": "0x8a667535eb42f942186c30e70c72483612e0854b",
+      "category": "general",
+      "volume": 1052560.599945,
+      "scaledCollateralVolume": 1052560.599945,
+      "liquidityMeasure": 879365.204169,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2025-08-06T05:40:34.399Z",
+      "source": "polymarket",
+      "tradesQuantity": "503",
+      "buysQuantity": "365",
+      "sellsQuantity": "138",
+      "scaledCollateralBuyVolume": "879365.204169",
+      "scaledCollateralSellVolume": "173195.395776",
+      "rawData": {
+        "market": {
+          "creator": "0x8a667535eb42f942186c30e70c72483612e0854b",
+          "id": "0xfff91c2a99c4c677ee72b61ec5b2759305125c7d4a8ce97c33db424dc2f40efe",
+          "question": "Rangers vs. Mariners - In the upcoming MLB game, scheduled for July 31 at 9:40PM ET:\nIf the Texas Rangers win, the market will resolve to “Rangers”.",
+          "questionID": "0xfff91c2a99c4c677ee72b61ec5b2759305125c7d4a8ce97c33db424dc2f40efe"
+        },
+        "orderbook": {
+          "id": "112744882674787019048577842008042029962234998947364561417955402912669471494485",
+          "tradesQuantity": "503",
+          "buysQuantity": "365",
+          "sellsQuantity": "138",
+          "scaledCollateralVolume": "1052560.599945",
+          "scaledCollateralBuyVolume": "879365.204169",
+          "scaledCollateralSellVolume": "173195.395776"
+        }
+      }
+    },
+    {
+      "id": "0xfff71b7bf119a73ecdcc6a721a89e6df59e1ba8b91e0c9239d27b40dbd425965",
+      "title": "Rays vs. Astros - In the upcoming MLB game, scheduled for May 29 at 8:10PM ET:\nIf the Tampa Bay Rays win, the market will resolve to “Rays”.",
+      "originalTitle": "Rays vs. Astros - In the upcoming MLB game, scheduled for May 29 at 8:10PM ET:\nIf the Tampa Bay Rays win, the market will resolve to “Rays”.",
+      "creator": "0x8a667535eb42f942186c30e70c72483612e0854b",
+      "category": "general",
+      "volume": 1042351.385946,
+      "scaledCollateralVolume": 1042351.385946,
+      "liquidityMeasure": 929351.352038,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2025-08-06T05:40:34.399Z",
+      "source": "polymarket",
+      "tradesQuantity": "1509",
+      "buysQuantity": "1099",
+      "sellsQuantity": "410",
+      "scaledCollateralBuyVolume": "929351.352038",
+      "scaledCollateralSellVolume": "113000.033908",
+      "rawData": {
+        "market": {
+          "creator": "0x8a667535eb42f942186c30e70c72483612e0854b",
+          "id": "0xfff71b7bf119a73ecdcc6a721a89e6df59e1ba8b91e0c9239d27b40dbd425965",
+          "question": "Rays vs. Astros - In the upcoming MLB game, scheduled for May 29 at 8:10PM ET:\nIf the Tampa Bay Rays win, the market will resolve to “Rays”.",
+          "questionID": "0xfff71b7bf119a73ecdcc6a721a89e6df59e1ba8b91e0c9239d27b40dbd425965"
+        },
+        "orderbook": {
+          "id": "87873728993798365834350426987754569014131826912795380448829927302445011733227",
+          "tradesQuantity": "1509",
+          "buysQuantity": "1099",
+          "sellsQuantity": "410",
+          "scaledCollateralVolume": "1042351.385946",
+          "scaledCollateralBuyVolume": "929351.352038",
+          "scaledCollateralSellVolume": "113000.033908"
+        }
+      }
+    },
+    {
+      "id": "0xfff5deb28231bfb8b5b53d986bb4fe753d70971607f4dc7c2c3dab4ad2c06493",
+      "title": "Ethereum Up or Down - June 24 - This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the ETH/USDT 1 Hour candle that begins on the time and date specified in the title.",
+      "originalTitle": "Ethereum Up or Down - June 24 - This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the ETH/USDT 1 Hour candle that begins on the time and date specified in the title.",
+      "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+      "category": "general",
+      "volume": 972278.872942,
+      "scaledCollateralVolume": 972278.872942,
+      "liquidityMeasure": 947245.835005,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2025-08-06T05:40:34.399Z",
+      "source": "polymarket",
+      "tradesQuantity": "656",
+      "buysQuantity": "575",
+      "sellsQuantity": "81",
+      "scaledCollateralBuyVolume": "947245.835005",
+      "scaledCollateralSellVolume": "25033.037937",
+      "rawData": {
+        "market": {
+          "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+          "id": "0xfff5deb28231bfb8b5b53d986bb4fe753d70971607f4dc7c2c3dab4ad2c06493",
+          "question": "Ethereum Up or Down - June 24 - This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the ETH/USDT 1 Hour candle that begins on the time and date specified in the title.",
+          "questionID": "0xfff5deb28231bfb8b5b53d986bb4fe753d70971607f4dc7c2c3dab4ad2c06493"
+        },
+        "orderbook": {
+          "id": "14866384931585536897202593162711694149148399763777427636022285232301696711188",
+          "tradesQuantity": "656",
+          "buysQuantity": "575",
+          "sellsQuantity": "81",
+          "scaledCollateralVolume": "972278.872942",
+          "scaledCollateralBuyVolume": "947245.835005",
+          "scaledCollateralSellVolume": "25033.037937"
+        }
+      }
+    },
+    {
+      "id": "0xffee993d7a9c5953af920a17a6f24db7873b41122bb1687a401efa69fb07c57c",
+      "title": "Will Elon Musk tweet about launching a Dogecoin-themed rollercoaster by the end of 2025?",
+      "originalTitle": "Will Elon Musk tweet about launching a Dogecoin-themed rollercoaster by the end of 2025?",
+      "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+      "category": "general",
+      "volume": 971851.499945,
+      "scaledCollateralVolume": 971851.499945,
+      "liquidityMeasure": 939737.932389,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2025-08-06T05:40:34.399Z",
+      "source": "polymarket",
+      "tradesQuantity": "760",
+      "buysQuantity": "643",
+      "sellsQuantity": "117",
+      "scaledCollateralBuyVolume": "939737.932389",
+      "scaledCollateralSellVolume": "32113.567556",
+      "rawData": {
+        "market": {
+          "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+          "id": "0xffee993d7a9c5953af920a17a6f24db7873b41122bb1687a401efa69fb07c57c",
+          "question": "Will Trump say Uranium during his Iran address on June 21? - Trump is scheduled to deliver 10 p.",
+          "questionID": "0xffee993d7a9c5953af920a17a6f24db7873b41122bb1687a401efa69fb07c57c"
+        },
+        "orderbook": {
+          "id": "40460234561972344656356425052803765767474572868261174702660739860194868113325",
+          "tradesQuantity": "760",
+          "buysQuantity": "643",
+          "sellsQuantity": "117",
+          "scaledCollateralVolume": "971851.499945",
+          "scaledCollateralBuyVolume": "939737.932389",
+          "scaledCollateralSellVolume": "32113.567556"
+        }
+      }
+    },
+    {
+      "id": "0xffd6fccaa0371428d32a49590c046e817e8b0c7f82d5cf40471b3f7f9d267511",
+      "title": "Will Trump meet with Elon Musk by July 31? - This market will resolve to \"Yes\" if Donald Trump meets with Elon Musk between June 5, and July 31, 2025, 11:59 PM ET.",
+      "originalTitle": "Will Trump meet with Elon Musk by July 31? - This market will resolve to \"Yes\" if Donald Trump meets with Elon Musk between June 5, and July 31, 2025, 11:59 PM ET.",
+      "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+      "category": "general",
+      "volume": 944775.777653,
+      "scaledCollateralVolume": 944775.777653,
+      "liquidityMeasure": 921079.100353,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2025-08-06T05:40:34.399Z",
+      "source": "polymarket",
+      "tradesQuantity": "96",
+      "buysQuantity": "61",
+      "sellsQuantity": "35",
+      "scaledCollateralBuyVolume": "921079.100353",
+      "scaledCollateralSellVolume": "23696.6773",
+      "rawData": {
+        "market": {
+          "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+          "id": "0xffd6fccaa0371428d32a49590c046e817e8b0c7f82d5cf40471b3f7f9d267511",
+          "question": "Will Trump meet with Elon Musk by July 31? - This market will resolve to \"Yes\" if Donald Trump meets with Elon Musk between June 5, and July 31, 2025, 11:59 PM ET.",
+          "questionID": "0xffd6fccaa0371428d32a49590c046e817e8b0c7f82d5cf40471b3f7f9d267511"
+        },
+        "orderbook": {
+          "id": "95832722052369159414941134432483791330342476703761512967217344447414576372729",
+          "tradesQuantity": "96",
+          "buysQuantity": "61",
+          "sellsQuantity": "35",
+          "scaledCollateralVolume": "944775.777653",
+          "scaledCollateralBuyVolume": "921079.100353",
+          "scaledCollateralSellVolume": "23696.6773"
+        }
+      }
+    },
+    {
+      "id": "0xffcc3d9996dbd4e254e923a0fdf50e848b5610a8883f40ea2db5bdb9c67af7d0",
+      "title": "Bitcoin Up or Down - June 11 - This market will resolve to \"Up\" if the change for BTCUSDT, measured in percentage, is greater than or equal to 0 for the 1 Hour candle that begins on the time and date specified in the title.",
+      "originalTitle": "Bitcoin Up or Down - June 11 - This market will resolve to \"Up\" if the change for BTCUSDT, measured in percentage, is greater than or equal to 0 for the 1 Hour candle that begins on the time and date specified in the title.",
+      "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+      "category": "general",
+      "volume": 871345.209836,
+      "scaledCollateralVolume": 871345.209836,
+      "liquidityMeasure": 495079.428983,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2025-08-06T05:40:34.399Z",
+      "source": "polymarket",
+      "tradesQuantity": "6738",
+      "buysQuantity": "3863",
+      "sellsQuantity": "2875",
+      "scaledCollateralBuyVolume": "495079.428983",
+      "scaledCollateralSellVolume": "376265.780853",
+      "rawData": {
+        "market": {
+          "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+          "id": "0xffcc3d9996dbd4e254e923a0fdf50e848b5610a8883f40ea2db5bdb9c67af7d0",
+          "question": "Bitcoin Up or Down - June 11 - This market will resolve to \"Up\" if the change for BTCUSDT, measured in percentage, is greater than or equal to 0 for the 1 Hour candle that begins on the time and date specified in the title.",
+          "questionID": "0xffcc3d9996dbd4e254e923a0fdf50e848b5610a8883f40ea2db5bdb9c67af7d0"
+        },
+        "orderbook": {
+          "id": "82651091301986089113085526490272944697099417369701161905977825651956926104631",
+          "tradesQuantity": "6738",
+          "buysQuantity": "3863",
+          "sellsQuantity": "2875",
+          "scaledCollateralVolume": "871345.209836",
+          "scaledCollateralBuyVolume": "495079.428983",
+          "scaledCollateralSellVolume": "376265.780853"
+        }
+      }
+    },
+    {
+      "id": "0xffc9820559239c245ee62d82b122a8f3f64a2ab4a4fc5299d8bc570b65cbd57d",
+      "title": "Will xDai’s STAKE token have a circulating market cap exceeding $100 million by the end of 2025?",
+      "originalTitle": "Will xDai’s STAKE token have a circulating market cap exceeding $100 million by the end of 2025?",
+      "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+      "category": "general",
+      "volume": 802746.257987,
+      "scaledCollateralVolume": 802746.257987,
+      "liquidityMeasure": 636239.496282,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2025-08-06T05:40:34.399Z",
+      "source": "polymarket",
+      "tradesQuantity": "646",
+      "buysQuantity": "472",
+      "sellsQuantity": "174",
+      "scaledCollateralBuyVolume": "636239.496282",
+      "scaledCollateralSellVolume": "166506.761705",
+      "rawData": {
+        "market": {
+          "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+          "id": "0xffc9820559239c245ee62d82b122a8f3f64a2ab4a4fc5299d8bc570b65cbd57d",
+          "question": "Lexus Eastbourne Open: Evans vs. Paul - Daniel Evans and Tommy Paul are scheduled to play each other in a Round 2 matchup in the Lexus Eastbourne Open mens singles tournament on June 25, 2025, at 9:30 AM ET.",
+          "questionID": "0xffc9820559239c245ee62d82b122a8f3f64a2ab4a4fc5299d8bc570b65cbd57d"
+        },
+        "orderbook": {
+          "id": "48257633084977603187300165450475946569920866266593797946416150301538288340898",
+          "tradesQuantity": "646",
+          "buysQuantity": "472",
+          "sellsQuantity": "174",
+          "scaledCollateralVolume": "802746.257987",
+          "scaledCollateralBuyVolume": "636239.496282",
+          "scaledCollateralSellVolume": "166506.761705"
+        }
+      }
+    },
+    {
+      "id": "0xffc91eedc17912448a196ee0c24046d7ef19bd660d684692c9cd0696e08f6607",
+      "title": "French Open: Andreeva vs. Putintseva - Mirra Andreeva and Yulia Putintseva are scheduled to play each other in a third round matchup in the French Open women's singles tournament on May 31, 2025, at 5:00 AM ET.",
+      "originalTitle": "French Open: Andreeva vs. Putintseva - Mirra Andreeva and Yulia Putintseva are scheduled to play each other in a third round matchup in the French Open women's singles tournament on May 31, 2025, at 5:00 AM ET.",
+      "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+      "category": "general",
+      "volume": 800799.721703,
+      "scaledCollateralVolume": 800799.721703,
+      "liquidityMeasure": 767605.10509,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2025-08-06T05:40:34.399Z",
+      "source": "polymarket",
+      "tradesQuantity": "1439",
+      "buysQuantity": "1040",
+      "sellsQuantity": "399",
+      "scaledCollateralBuyVolume": "767605.10509",
+      "scaledCollateralSellVolume": "33194.616613",
+      "rawData": {
+        "market": {
+          "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+          "id": "0xffc91eedc17912448a196ee0c24046d7ef19bd660d684692c9cd0696e08f6607",
+          "question": "French Open: Andreeva vs. Putintseva - Mirra Andreeva and Yulia Putintseva are scheduled to play each other in a third round matchup in the French Open women's singles tournament on May 31, 2025, at 5:00 AM ET.",
+          "questionID": "0xffc91eedc17912448a196ee0c24046d7ef19bd660d684692c9cd0696e08f6607"
+        },
+        "orderbook": {
+          "id": "81555869488720644133587746412188216444712343514388857185086566566860278979634",
+          "tradesQuantity": "1439",
+          "buysQuantity": "1040",
+          "sellsQuantity": "399",
+          "scaledCollateralVolume": "800799.721703",
+          "scaledCollateralBuyVolume": "767605.10509",
+          "scaledCollateralSellVolume": "33194.616613"
+        }
+      }
+    },
+    {
+      "id": "0xffc7c25e194d9de311e9c87ea24e6b94689344f03b43f28d39f2b09974dd5838",
+      "title": "Will Dogecoin reach $0.18 in July? - This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Dogecoin (DOGE/USDT) between July 1, 2025, 00:00 and July 31, 2025, 23:59 in the ET timezone has a final \"High\" price of $0.",
+      "originalTitle": "Will Dogecoin reach $0.18 in July? - This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Dogecoin (DOGE/USDT) between July 1, 2025, 00:00 and July 31, 2025, 23:59 in the ET timezone has a final \"High\" price of $0.",
+      "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+      "category": "general",
+      "volume": 750627.076023,
+      "scaledCollateralVolume": 750627.076023,
+      "liquidityMeasure": 503658.39788,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2025-08-06T05:40:34.399Z",
+      "source": "polymarket",
+      "tradesQuantity": "7022",
+      "buysQuantity": "4390",
+      "sellsQuantity": "2632",
+      "scaledCollateralBuyVolume": "503658.39788",
+      "scaledCollateralSellVolume": "246968.678143",
+      "rawData": {
+        "market": {
+          "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+          "id": "0xffc7c25e194d9de311e9c87ea24e6b94689344f03b43f28d39f2b09974dd5838",
+          "question": "Will Dogecoin reach $0.18 in July? - This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Dogecoin (DOGE/USDT) between July 1, 2025, 00:00 and July 31, 2025, 23:59 in the ET timezone has a final \"High\" price of $0.",
+          "questionID": "0xffc7c25e194d9de311e9c87ea24e6b94689344f03b43f28d39f2b09974dd5838"
+        },
+        "orderbook": {
+          "id": "25576058321120233631953665979060466858369324557031607141467685533892970617491",
+          "tradesQuantity": "7022",
+          "buysQuantity": "4390",
+          "sellsQuantity": "2632",
+          "scaledCollateralVolume": "750627.076023",
+          "scaledCollateralBuyVolume": "503658.39788",
+          "scaledCollateralSellVolume": "246968.678143"
+        }
+      }
+    },
+    {
+      "id": "0xffa8cc4050ffd3f09dc6b25a10eec13e47afcfc8fe537446978853223abdcdc7",
+      "title": "Will Trump mention Epstein by Monday? - This market will resolve to “Yes” if Donald Trump says \"Epstein\" between June 5, 5:30 PM ET and June 9, 2025, 11:59 PM ET.",
+      "originalTitle": "Will Trump mention Epstein by Monday? - This market will resolve to “Yes” if Donald Trump says \"Epstein\" between June 5, 5:30 PM ET and June 9, 2025, 11:59 PM ET.",
+      "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+      "category": "general",
+      "volume": 740388.088817,
+      "scaledCollateralVolume": 740388.088817,
+      "liquidityMeasure": 625657.761381,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2025-08-06T05:40:34.399Z",
+      "source": "polymarket",
+      "tradesQuantity": "902",
+      "buysQuantity": "768",
+      "sellsQuantity": "134",
+      "scaledCollateralBuyVolume": "625657.761381",
+      "scaledCollateralSellVolume": "114730.327436",
+      "rawData": {
+        "market": {
+          "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+          "id": "0xffa8cc4050ffd3f09dc6b25a10eec13e47afcfc8fe537446978853223abdcdc7",
+          "question": "Will Trump mention Epstein by Monday? - This market will resolve to “Yes” if Donald Trump says \"Epstein\" between June 5, 5:30 PM ET and June 9, 2025, 11:59 PM ET.",
+          "questionID": "0xffa8cc4050ffd3f09dc6b25a10eec13e47afcfc8fe537446978853223abdcdc7"
+        },
+        "orderbook": {
+          "id": "15826470815006963518701387270426953447763566075659322783926487360344135741553",
+          "tradesQuantity": "902",
+          "buysQuantity": "768",
+          "sellsQuantity": "134",
+          "scaledCollateralVolume": "740388.088817",
+          "scaledCollateralBuyVolume": "625657.761381",
+          "scaledCollateralSellVolume": "114730.327436"
+        }
+      }
+    },
+    {
+      "id": "0x57c6bab1ba758d911f11e67ef323acebcfca04b7",
+      "title": "Will Bitcoin Rise or Fall on June 11",
+      "originalTitle": "Will Tether collapse and take down the whole crypto market before the end of 2024?",
+      "creator": "0x5367f217f5942cb10db16f2831a11fa287d78216",
+      "category": "cryptocurrency",
+      "volume": 30381.89069539639,
+      "scaledCollateralVolume": 30381.89069539639,
+      "liquidityMeasure": 85.61654549465504,
+      "outcomes": [
+        "Yes, USDT price will drop below 0.05 USD permanently, causing BTC/USD will remain below $5,000 for at least 6 months.",
+        "No,  USDT will retain its peg."
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2021-02-28T04:49:45.000Z",
+      "source": "omen",
+      "tradesQuantity": "169",
+      "buysQuantity": "93",
+      "sellsQuantity": "47",
+      "scaledCollateralBuyVolume": "18229.134417237834",
+      "scaledCollateralSellVolume": "12152.756278158557",
+      "rawData": {
+        "market": {
+          "category": "cryptocurrency",
+          "creationTimestamp": "1614487785",
+          "creator": "0x5367f217f5942cb10db16f2831a11fa287d78216",
+          "id": "0x57c6bab1ba758d911f11e67ef323acebcfca04b7",
+          "liquidityMeasure": "85616545494655040634",
+          "outcomeSlotCount": 2,
+          "outcomes": [
+            "Yes, USDT price will drop below 0.05 USD permanently, causing BTC/USD will remain below $5,000 for at least 6 months.",
+            "No,  USDT will retain its peg."
+          ],
+          "scaledCollateralVolume": "30381.890695396390391705",
+          "scaledLiquidityMeasure": "85.616545494655040634",
+          "title": "Will Tether collapse and take down the whole crypto market before the end of 2024?",
+          "usdLiquidityMeasure": "85.61646739637264493982159097238189",
+          "usdVolume": "30381.89080506050015338920159114932"
+        }
+      }
+    },
+    {
+      "id": "0xae71d2fdf91147bb44ed16f46c5c375852907b3e",
+      "title": "Who will win the Jake Paul vs Tryron Woodley boxing match?",
+      "originalTitle": "Who will win the Jake Paul vs Tryron Woodley boxing match?",
+      "creator": "0x649eb43f777e05e1a772eab4587a70e65f0d9fd1",
+      "category": "sports",
+      "volume": 23871.699979132583,
+      "scaledCollateralVolume": 23871.699979132583,
+      "liquidityMeasure": 0,
+      "outcomes": [
+        "Jake Paul",
+        "Tyron Woodley"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2021-08-13T23:58:10.000Z",
+      "source": "omen",
+      "tradesQuantity": "575",
+      "buysQuantity": "158",
+      "sellsQuantity": "204",
+      "scaledCollateralBuyVolume": "14323.019987479549",
+      "scaledCollateralSellVolume": "9548.679991653034",
+      "rawData": {
+        "market": {
+          "category": "sports",
+          "creationTimestamp": "1628899090",
+          "creator": "0x649eb43f777e05e1a772eab4587a70e65f0d9fd1",
+          "id": "0xae71d2fdf91147bb44ed16f46c5c375852907b3e",
+          "liquidityMeasure": "0",
+          "outcomeSlotCount": 2,
+          "outcomes": [
+            "Jake Paul",
+            "Tyron Woodley"
+          ],
+          "scaledCollateralVolume": "23871.699979132584913208",
+          "scaledLiquidityMeasure": "0",
+          "title": "Who will win the Jake Paul vs Tryron Woodley boxing match?",
+          "usdLiquidityMeasure": "0",
+          "usdVolume": "23871.70151483447941436856832098822"
+        }
+      }
+    },
+    {
+      "id": "0xfe07f9b463ecd5ed213e24999135e53dfd2750f1",
+      "title": "Which cryptocurrency will panelists mention the most times?",
+      "originalTitle": "Which cryptocurrency will panelists mention the most times?",
+      "creator": "0x70345207fa69d8277dd9a4507998cc3f678b642d",
+      "category": "cryptocurrency",
+      "volume": 15742.218003850714,
+      "scaledCollateralVolume": 15742.218003850714,
+      "liquidityMeasure": 6200.454092070967,
+      "outcomes": [
+        "Bitcoin",
+        "Ethereum",
+        "Dogecoin",
+        "Other"
+      ],
+      "outcomeSlotCount": 4,
+      "creationTimestamp": "2021-05-18T08:34:30.000Z",
+      "source": "omen",
+      "tradesQuantity": "206",
+      "buysQuantity": "239",
+      "sellsQuantity": "217",
+      "scaledCollateralBuyVolume": "9445.330802310427",
+      "scaledCollateralSellVolume": "6296.887201540286",
+      "rawData": {
+        "market": {
+          "category": "cryptocurrency",
+          "creationTimestamp": "1621326870",
+          "creator": "0x70345207fa69d8277dd9a4507998cc3f678b642d",
+          "id": "0xfe07f9b463ecd5ed213e24999135e53dfd2750f1",
+          "liquidityMeasure": "6200454092070966753543",
+          "outcomeSlotCount": 4,
+          "outcomes": [
+            "Bitcoin",
+            "Ethereum",
+            "Dogecoin",
+            "Other"
+          ],
+          "scaledCollateralVolume": "15742.21800385071483809",
+          "scaledLiquidityMeasure": "6200.454092070966753543",
+          "title": "Which cryptocurrency will panelists mention the most times?",
+          "usdLiquidityMeasure": "0",
+          "usdVolume": "0"
+        }
+      }
+    },
+    {
+      "id": "0xb9c232e3b8ce01cd9821e5416ab8f1970a41120b",
+      "title": "Will the Summer Olympics be completed successfully in Tokyo in 2021 with all planned events taking place before the end of August 2021?",
+      "originalTitle": "Will the Summer Olympics be completed successfully in Tokyo in 2021 with all planned events taking place before the end of August 2021?",
+      "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+      "category": "sports",
+      "volume": 15680.323243113968,
+      "scaledCollateralVolume": 15680.323243113968,
+      "liquidityMeasure": 0,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2021-06-23T20:29:10.000Z",
+      "source": "omen",
+      "tradesQuantity": "218",
+      "buysQuantity": "219",
+      "sellsQuantity": "180",
+      "scaledCollateralBuyVolume": "9408.193945868381",
+      "scaledCollateralSellVolume": "6272.129297245588",
+      "rawData": {
+        "market": {
+          "category": "sports",
+          "creationTimestamp": "1624480150",
+          "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+          "id": "0xb9c232e3b8ce01cd9821e5416ab8f1970a41120b",
+          "liquidityMeasure": "0",
+          "outcomeSlotCount": 2,
+          "outcomes": [
+            "Yes",
+            "No"
+          ],
+          "scaledCollateralVolume": "15680.323243113968419847",
+          "scaledLiquidityMeasure": "0",
+          "title": "Will the Summer Olympics be completed successfully in Tokyo in 2021 with all planned events taking place before the end of August 2021?",
+          "usdLiquidityMeasure": "0",
+          "usdVolume": "15680.32317722043337083133611965411"
+        }
+      }
+    },
+    {
+      "id": "0x4adff28532f94a8d97b3a603e3eb6273ee9fb0c2",
+      "title": "Will the circulating market cap for xDai’s STAKE be over $100 million at the end of 2025?",
+      "originalTitle": "Will the circulating market cap for xDai’s STAKE be over $100 million at the end of 2025?",
+      "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+      "category": "cryptocurrency",
+      "volume": 14107.804549075898,
+      "scaledCollateralVolume": 14107.804549075898,
+      "liquidityMeasure": 45.76056067365194,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2021-06-23T20:30:05.000Z",
+      "source": "omen",
+      "tradesQuantity": "597",
+      "buysQuantity": "302",
+      "sellsQuantity": "67",
+      "scaledCollateralBuyVolume": "8464.682729445538",
+      "scaledCollateralSellVolume": "5643.12181963036",
+      "rawData": {
+        "market": {
+          "category": "cryptocurrency",
+          "creationTimestamp": "1624480205",
+          "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+          "id": "0x4adff28532f94a8d97b3a603e3eb6273ee9fb0c2",
+          "liquidityMeasure": "45760560673651934719",
+          "outcomeSlotCount": 2,
+          "outcomes": [
+            "Yes",
+            "No"
+          ],
+          "scaledCollateralVolume": "14107.804549075898182988",
+          "scaledLiquidityMeasure": "45.760560673651934719",
+          "title": "Will the circulating market cap for xDai’s STAKE be over $100 million at the end of 2021?",
+          "usdLiquidityMeasure": "45.76075040782911014340024953171926",
+          "usdVolume": "14107.80844980208150439263587253167"
+        }
+      }
+    },
+    {
+      "id": "0x5ff624fe39d8943ca0d5cc29f1bf19fcb3be1904",
+      "title": "Which panelist will speak for the least amount of time?",
+      "originalTitle": "Which panelist will speak for the least amount of time?",
+      "creator": "0x70345207fa69d8277dd9a4507998cc3f678b642d",
+      "category": "meta",
+      "volume": 13916,
+      "scaledCollateralVolume": 13916,
+      "liquidityMeasure": 3345.71341086589,
+      "outcomes": [
+        "Gerald Nestler",
+        "Pekko Koskinen",
+        "Akseli Virtanen",
+        "Theo Morales"
+      ],
+      "outcomeSlotCount": 4,
+      "creationTimestamp": "2021-05-18T13:25:05.000Z",
+      "source": "omen",
+      "tradesQuantity": "590",
+      "buysQuantity": "194",
+      "sellsQuantity": "173",
+      "scaledCollateralBuyVolume": "8349.6",
+      "scaledCollateralSellVolume": "5566.400000000001",
+      "rawData": {
+        "market": {
+          "category": "meta",
+          "creationTimestamp": "1621344305",
+          "creator": "0x70345207fa69d8277dd9a4507998cc3f678b642d",
+          "id": "0x5ff624fe39d8943ca0d5cc29f1bf19fcb3be1904",
+          "liquidityMeasure": "3345713410865890035984",
+          "outcomeSlotCount": 4,
+          "outcomes": [
+            "Gerald Nestler",
+            "Pekko Koskinen",
+            "Akseli Virtanen",
+            "Theo Morales"
+          ],
+          "scaledCollateralVolume": "13916",
+          "scaledLiquidityMeasure": "3345.713410865890035984",
+          "title": "Which panelist will speak for the least amount of time?",
+          "usdLiquidityMeasure": "0",
+          "usdVolume": "0"
+        }
+      }
+    },
+    {
+      "id": "0x617df4629b2b11ab775562b69ff20e148fe77fb8",
+      "title": "Will Elon Musk announce plans for a Dogecoin-themed rollercoaster on Twitter ",
+      "originalTitle": "Will Elon Musk announce plans for a Dogecoin-themed rollercoaster on Twitter ",
+      "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+      "category": "cryptocurrency",
+      "volume": 13788.215441448596,
+      "scaledCollateralVolume": 13788.215441448596,
+      "liquidityMeasure": 0.8469553143154999,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2021-06-23T20:32:50.000Z",
+      "source": "omen",
+      "tradesQuantity": "569",
+      "buysQuantity": "263",
+      "sellsQuantity": "128",
+      "scaledCollateralBuyVolume": "8272.929264869157",
+      "scaledCollateralSellVolume": "5515.286176579439",
+      "rawData": {
+        "market": {
+          "category": "cryptocurrency",
+          "creationTimestamp": "1624480370",
+          "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+          "id": "0x617df4629b2b11ab775562b69ff20e148fe77fb8",
+          "liquidityMeasure": "846955314315499841",
+          "outcomeSlotCount": 2,
+          "outcomes": [
+            "Yes",
+            "No"
+          ],
+          "scaledCollateralVolume": "13788.215441448596158401",
+          "scaledLiquidityMeasure": "0.846955314315499841",
+          "title": "Will Arbitrum have a higher Total Value Locked (“TVL”) than OptimismPBC at the end of September 2021?",
+          "usdLiquidityMeasure": "0.8469550690006778991128101026445144",
+          "usdVolume": "13788.21501385278351054565464054763"
+        }
+      }
+    },
+    {
+      "id": "0x50d025b5b370eac0096d25268b13703f39ee701d",
+      "title": "Will the Los Angeles Rams win Super Bowl 56?",
+      "originalTitle": "Will the Los Angeles Rams win Super Bowl 56?",
+      "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+      "category": "sports",
+      "volume": 10684.647,
+      "scaledCollateralVolume": 10684.647,
+      "liquidityMeasure": 0,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2022-02-02T21:43:50.000Z",
+      "source": "omen",
+      "tradesQuantity": "116",
+      "buysQuantity": "281",
+      "sellsQuantity": "57",
+      "scaledCollateralBuyVolume": "6410.7882",
+      "scaledCollateralSellVolume": "4273.858800000001",
+      "rawData": {
+        "market": {
+          "category": "sports",
+          "creationTimestamp": "1643838230",
+          "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+          "id": "0x50d025b5b370eac0096d25268b13703f39ee701d",
+          "liquidityMeasure": "0",
+          "outcomeSlotCount": 2,
+          "outcomes": [
+            "Yes",
+            "No"
+          ],
+          "scaledCollateralVolume": "10684.647",
+          "scaledLiquidityMeasure": "0",
+          "title": "Will the Los Angeles Rams win Super Bowl 56?",
+          "usdLiquidityMeasure": "0",
+          "usdVolume": "10684.67533281805326377176482440106"
+        }
+      }
+    },
+    {
+      "id": "0x0433e8d20f1b09b009d2ddf89d7fd0a31d6c9757",
+      "title": "Will the Grayscale Bitcoin Trust (GBTC) have a discount to NAV at the end of August 2021?",
+      "originalTitle": "Will the Grayscale Bitcoin Trust (GBTC) have a discount to NAV at the end of August 2021?",
+      "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+      "category": "cryptocurrency",
+      "volume": 10576.72992,
+      "scaledCollateralVolume": 10576.72992,
+      "liquidityMeasure": 0,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2021-06-23T20:29:35.000Z",
+      "source": "omen",
+      "tradesQuantity": "388",
+      "buysQuantity": "82",
+      "sellsQuantity": "102",
+      "scaledCollateralBuyVolume": "6346.037952",
+      "scaledCollateralSellVolume": "4230.691968",
+      "rawData": {
+        "market": {
+          "category": "cryptocurrency",
+          "creationTimestamp": "1624480175",
+          "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+          "id": "0x0433e8d20f1b09b009d2ddf89d7fd0a31d6c9757",
+          "liquidityMeasure": "0",
+          "outcomeSlotCount": 2,
+          "outcomes": [
+            "Yes",
+            "No"
+          ],
+          "scaledCollateralVolume": "10576.72992",
+          "scaledLiquidityMeasure": "0",
+          "title": "Bitcoin Rise or Fall on June 11",
+          "usdLiquidityMeasure": "0",
+          "usdVolume": "10576.7296967110157093712684262752"
+        }
+      }
+    },
+    {
+      "id": "0x0a21643709a438a389f63b56e761e33d121dfa0e",
+      "title": "What will be the peak attendance of this presentation? [Viewers]",
+      "originalTitle": "What will be the peak attendance of this presentation? [Viewers]",
+      "creator": "0x70345207fa69d8277dd9a4507998cc3f678b642d",
+      "category": "meta",
+      "volume": 9804.422485741106,
+      "scaledCollateralVolume": 9804.422485741106,
+      "liquidityMeasure": 8047.059293479067,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomeSlotCount": 2,
+      "creationTimestamp": "2021-05-18T13:20:25.000Z",
+      "source": "omen",
+      "tradesQuantity": "487",
+      "buysQuantity": "101",
+      "sellsQuantity": "215",
+      "scaledCollateralBuyVolume": "5882.653491444664",
+      "scaledCollateralSellVolume": "3921.7689942964425",
+      "rawData": {
+        "market": {
+          "category": "meta",
+          "creationTimestamp": "1621344025",
+          "creator": "0x70345207fa69d8277dd9a4507998cc3f678b642d",
+          "id": "0x0a21643709a438a389f63b56e761e33d121dfa0e",
+          "liquidityMeasure": "8047059293479066688792",
+          "outcomeSlotCount": 2,
+          "outcomes": null,
+          "scaledCollateralVolume": "9804.422485741106876852",
+          "scaledLiquidityMeasure": "8047.059293479066688792",
+          "title": "What will be the peak attendance of this presentation? [Viewers]",
+          "usdLiquidityMeasure": "0",
+          "usdVolume": "0"
+        }
+      }
+    }
+  ],
+  "combinedMarkets": [
+    {
+      "id": "combined-0xffcc3d9996dbd4e254e923a0fdf50e848b5610a8883f40ea2db5bdb9c67af7d0-0x0433e8d20f1b09b009d2ddf89d7fd0a31d6c9757",
+      "title": "Bitcoin Up or Down - June 11 - This market will resolve to \"Up\" if the change for BTCUSDT, measured in percentage, is greater than or equal to 0 for the 1 Hour candle that begins on the time and date specified in the title.",
+      "category": "cryptocurrency",
+      "combinedVolume": 881921.939756,
+      "matchConfidence": 1.7,
+      "polymarketMarket": {
+        "id": "0xffcc3d9996dbd4e254e923a0fdf50e848b5610a8883f40ea2db5bdb9c67af7d0",
+        "title": "Bitcoin Up or Down - June 11 - This market will resolve to \"Up\" if the change for BTCUSDT, measured in percentage, is greater than or equal to 0 for the 1 Hour candle that begins on the time and date specified in the title.",
+        "originalTitle": "Bitcoin Up or Down - June 11 - This market will resolve to \"Up\" if the change for BTCUSDT, measured in percentage, is greater than or equal to 0 for the 1 Hour candle that begins on the time and date specified in the title.",
+        "volume": 871345.209836,
+        "tradesQuantity": "6738",
+        "buysQuantity": "3863",
+        "sellsQuantity": "2875",
+        "scaledCollateralBuyVolume": "495079.428983",
+        "scaledCollateralSellVolume": "376265.780853",
+        "rawData": {
+          "market": {
+            "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+            "id": "0xffcc3d9996dbd4e254e923a0fdf50e848b5610a8883f40ea2db5bdb9c67af7d0",
+            "question": "Bitcoin Up or Down - June 11 - This market will resolve to \"Up\" if the change for BTCUSDT, measured in percentage, is greater than or equal to 0 for the 1 Hour candle that begins on the time and date specified in the title.",
+            "questionID": "0xffcc3d9996dbd4e254e923a0fdf50e848b5610a8883f40ea2db5bdb9c67af7d0"
+          },
+          "orderbook": {
+            "id": "82651091301986089113085526490272944697099417369701161905977825651956926104631",
+            "tradesQuantity": "6738",
+            "buysQuantity": "3863",
+            "sellsQuantity": "2875",
+            "scaledCollateralVolume": "871345.209836",
+            "scaledCollateralBuyVolume": "495079.428983",
+            "scaledCollateralSellVolume": "376265.780853"
+          }
+        }
+      },
+      "omenMarket": {
+        "id": "0x0433e8d20f1b09b009d2ddf89d7fd0a31d6c9757",
+        "title": "Will Bitcoin Rise or Fall on June 11",
+        "originalTitle": "Will the Grayscale Bitcoin Trust (GBTC) have a discount to NAV at the end of August 2021?",
+        "volume": 10576.72992,
+        "category": "cryptocurrency",
+        "tradesQuantity": "141",
+        "buysQuantity": "77",
+        "sellsQuantity": "107",
+        "scaledCollateralBuyVolume": "6346.037952",
+        "scaledCollateralSellVolume": "4230.691968",
+        "rawData": {
+          "market": {
+            "category": "cryptocurrency",
+            "creationTimestamp": "1624480175",
+            "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+            "id": "0x0433e8d20f1b09b009d2ddf89d7fd0a31d6c9757",
+            "liquidityMeasure": "0",
+            "outcomeSlotCount": 2,
+            "outcomes": [
+              "Yes",
+              "No"
+            ],
+            "scaledCollateralVolume": "10576.72992",
+            "scaledLiquidityMeasure": "0",
+            "title": "Will the Grayscale Bitcoin Trust (GBTC) have a discount to NAV at the end of August 2021?",
+            "usdLiquidityMeasure": "0",
+            "usdVolume": "10576.7296967110157093712684262752"
+          }
+        }
+      },
+      "createdAt": "2025-08-06T05:40:34.402Z",
+      "outcomes": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "combined-0xffc7c25e194d9de311e9c87ea24e6b94689344f03b43f28d39f2b09974dd5838-0x57c6bab1ba758d911f11e67ef323acebcfca04b7",
+      "title": "Will Dogecoin reach $0.18 in July? - This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Dogecoin (DOGE/USDT) between July 1, 2025, 00:00 and July 31, 2025, 23:59 in the ET timezone has a final \"High\" price of $0.",
+      "category": "cryptocurrency",
+      "combinedVolume": 781008.9667183963,
+      "matchConfidence": 0.5,
+      "polymarketMarket": {
+        "id": "0xffc7c25e194d9de311e9c87ea24e6b94689344f03b43f28d39f2b09974dd5838",
+        "title": "Will Dogecoin reach $0.18 in July? - This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Dogecoin (DOGE/USDT) between July 1, 2025, 00:00 and July 31, 2025, 23:59 in the ET timezone has a final \"High\" price of $0.",
+        "originalTitle": "Will Dogecoin reach $0.18 in July? - This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Dogecoin (DOGE/USDT) between July 1, 2025, 00:00 and July 31, 2025, 23:59 in the ET timezone has a final \"High\" price of $0.",
+        "volume": 750627.076023,
+        "tradesQuantity": "7022",
+        "buysQuantity": "4390",
+        "sellsQuantity": "2632",
+        "scaledCollateralBuyVolume": "503658.39788",
+        "scaledCollateralSellVolume": "246968.678143",
+        "rawData": {
+          "market": {
+            "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+            "id": "0xffc7c25e194d9de311e9c87ea24e6b94689344f03b43f28d39f2b09974dd5838",
+            "question": "Will Dogecoin reach $0.18 in July? - This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Dogecoin (DOGE/USDT) between July 1, 2025, 00:00 and July 31, 2025, 23:59 in the ET timezone has a final \"High\" price of $0.",
+            "questionID": "0xffc7c25e194d9de311e9c87ea24e6b94689344f03b43f28d39f2b09974dd5838"
+          },
+          "orderbook": {
+            "id": "25576058321120233631953665979060466858369324557031607141467685533892970617491",
+            "tradesQuantity": "7022",
+            "buysQuantity": "4390",
+            "sellsQuantity": "2632",
+            "scaledCollateralVolume": "750627.076023",
+            "scaledCollateralBuyVolume": "503658.39788",
+            "scaledCollateralSellVolume": "246968.678143"
+          }
+        }
+      },
+      "omenMarket": {
+        "id": "0x57c6bab1ba758d911f11e67ef323acebcfca04b7",
+        "title": "Can Dogecoin Hit $0.18 in July?",
+        "originalTitle": "Can Dogecoin Hit $0.18 in July?",
+        "volume": 30381.89069539639,
+        "category": "cryptocurrency",
+        "tradesQuantity": "139",
+        "buysQuantity": "284",
+        "sellsQuantity": "81",
+        "scaledCollateralBuyVolume": "18229.134417237834",
+        "scaledCollateralSellVolume": "12152.756278158557",
+        "rawData": {
+          "market": {
+            "category": "cryptocurrency",
+            "creationTimestamp": "1614487785",
+            "creator": "0x5367f217f5942cb10db16f2831a11fa287d78216",
+            "id": "0x57c6bab1ba758d911f11e67ef323acebcfca04b7",
+            "liquidityMeasure": "85616545494655040634",
+            "outcomeSlotCount": 2,
+            "outcomes": [
+              "Yes, USDT price will drop below 0.05 USD permanently, causing BTC/USD will remain below $5,000 for at least 6 months.",
+              "No,  USDT will retain its peg."
+            ],
+            "scaledCollateralVolume": "30381.890695396390391705",
+            "scaledLiquidityMeasure": "85.616545494655040634",
+            "title": "Will Tether collapse and take down the whole crypto market before the end of 2024?",
+            "usdLiquidityMeasure": "85.61646739637264493982159097238189",
+            "usdVolume": "30381.89080506050015338920159114932"
+          }
+        }
+      },
+      "createdAt": "2025-08-06T05:40:34.402Z",
+      "outcomes": [
+        "Yes, USDT price will drop below 0.05 USD permanently, causing BTC/USD will remain below $5,000 for at least 6 months.",
+        "No,  USDT will retain its peg."
+      ]
+    },
+    {
+  "id": "combined-0xabc123def4567890fedcba0987654321abcdeffedcba9876543210fedcba1234-0x9876fedcba1234567890abcdef1234567890fedcbaabcdef1234567890abcdef12",
+  "title": "Will the stock price of MemeCoin skyrocket above $1000 after Elon Musk's surprise Mars tweet in 2025?",
+  "category": "cryptocurrency",
+  "combinedVolume": 781009.9667183963,
+  "matchConfidence": 0.7,
+  "polymarketMarket": {
+    "id": "0xabc123def4567890fedcba0987654321abcdeffedcba9876543210fedcba1234",
+    "title": "Will the stock price of MemeCoin skyrocket above $1000 after Elon Musk's surprise Mars tweet in 2025?",
+    "originalTitle": "Will the stock price of MemeCoin skyrocket above $1000 after Elon Musk's surprise Mars tweet in 2025?",
+    "volume": 750627.076023,
+    "tradesQuantity": "7022",
+    "buysQuantity": "4390",
+    "sellsQuantity": "2632",
+    "scaledCollateralBuyVolume": "503658.39788",
+    "scaledCollateralSellVolume": "246968.678143",
+    "rawData": {
+      "market": {
+        "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+        "id": "0xabc123def4567890fedcba0987654321abcdeffedcba9876543210fedcba1234",
+        "question": "Will the stock price of MemeCoin skyrocket above $1000 after Elon Musk's surprise Mars tweet in 2025?",
+        "questionID": "0xabc123def4567890fedcba0987654321abcdeffedcba9876543210fedcba1234"
+      },
+      "orderbook": {
+        "id": "25576058321120233631953665979060466858369324557031607141467685533892970617491",
+        "tradesQuantity": "7022",
+        "buysQuantity": "4390",
+        "sellsQuantity": "2632",
+        "scaledCollateralVolume": "750627.076023",
+        "scaledCollateralBuyVolume": "503658.39788",
+        "scaledCollateralSellVolume": "246968.678143"
+      }
+    }
+  },
+  "omenMarket": {
+    "id": "0x9876fedcba1234567890abcdef1234567890fedcbaabcdef1234567890abcdef12",
+    "title": "Will MemeCoin reach a $1000 price following Elon Musk's Mars tweet in 2025?",
+    "originalTitle": "Will MemeCoin reach a $1000 price following Elon Musk's Mars tweet in 2025?",
+    "volume": 30382.89069539639,
+    "category": "cryptocurrency",
+    "tradesQuantity": "139",
+    "buysQuantity": "284",
+    "sellsQuantity": "81",
+    "scaledCollateralBuyVolume": "18229.134417237834",
+    "scaledCollateralSellVolume": "12152.756278158557",
+    "rawData": {
+      "market": {
+        "category": "cryptocurrency",
+        "creationTimestamp": "1614487785",
+        "creator": "0x5367f217f5942cb10db16f2831a11fa287d78216",
+        "id": "0x9876fedcba1234567890abcdef1234567890fedcbaabcdef1234567890abcdef12",
+        "liquidityMeasure": "85616545494655040634",
+        "outcomeSlotCount": 2,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "scaledCollateralVolume": "30382.890695396390391705",
+        "scaledLiquidityMeasure": "85.616545494655040634",
+        "title": "Will MemeCoin reach a $1000 price following Elon Musk's Mars tweet in 2025?",
+        "usdLiquidityMeasure": "85.61646739637264493982159097238189",
+        "usdVolume": "30382.89080506050015338920159114932"
+      }
+    }
+  },
+  "createdAt": "2025-08-08T00:00:00.000Z",
+  "outcomes": [
+    "Yes",
+    "No"
+  ]
+},
+
+    {
+  "id": "combined-0xffee993d7a9c5953af920a17a6f24db7873b41122bb1687a401efa69fb07c57c-0x617df4629b2b11ab775562b69ff20e148fe77fb8",
+  "title": "Will Elon Musk tweet about launching a Dogecoin-themed rollercoaster by the end of 2025?",
+  "category": "cryptocurrency",
+  "combinedVolume": 985639.7153864486,
+  "matchConfidence": 0.95,
+  "polymarketMarket": {
+    "id": "0xffee993d7a9c5953af920a17a6f24db7873b41122bb1687a401efa69fb07c57c",
+    "title": "Will Elon Musk tweet about launching a Dogecoin-themed rollercoaster by the end of 2025?",
+    "originalTitle": "Will Elon Musk tweet about launching a Dogecoin-themed rollercoaster by the end of 2025?",
+    "volume": 971851.499945,
+    "tradesQuantity": "760",
+    "buysQuantity": "643",
+    "sellsQuantity": "117",
+    "scaledCollateralBuyVolume": "939737.932389",
+    "scaledCollateralSellVolume": "32113.567556",
+    "rawData": {
+      "market": {
+        "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+        "id": "0xffee993d7a9c5953af920a17a6f24db7873b41122bb1687a401efa69fb07c57c",
+        "question": "Will Elon Musk tweet about launching a Dogecoin-themed rollercoaster by the end of 2025?",
+        "questionID": "0xffee993d7a9c5953af920a17a6f24db7873b41122bb1687a401efa69fb07c57c"
+      },
+      "orderbook": {
+        "id": "40460234561972344656356425052803765767474572868261174702660739860194868113325",
+        "tradesQuantity": "760",
+        "buysQuantity": "643",
+        "sellsQuantity": "117",
+        "scaledCollateralVolume": "971851.499945",
+        "scaledCollateralBuyVolume": "939737.932389",
+        "scaledCollateralSellVolume": "32113.567556"
+      }
+    }
+  },
+  "omenMarket": {
+    "id": "0x617df4629b2b11ab775562b69ff20e148fe77fb8",
+    "title": "Will Elon Musk announce plans for a Dogecoin-themed rollercoaster on Twitter ",
+    "originalTitle": "Will Elon Musk announce plans for a Dogecoin-themed rollercoaster on Twitter ",
+    "volume": 13788.215441448596,
+    "category": "cryptocurrency",
+    "tradesQuantity": "569",
+    "buysQuantity": "263",
+    "sellsQuantity": "128",
+    "scaledCollateralBuyVolume": "8272.929264869157",
+    "scaledCollateralSellVolume": "5515.286176579439",
+    "rawData": {
+      "market": {
+        "category": "cryptocurrency",
+        "creationTimestamp": "1624480370",
+        "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+        "id": "0x617df4629b2b11ab775562b69ff20e148fe77fb8",
+        "liquidityMeasure": "846955314315499841",
+        "outcomeSlotCount": 2,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "scaledCollateralVolume": "13788.215441448596158401",
+        "scaledLiquidityMeasure": "0.846955314315499841",
+        "title": "Will Elon Musk announce plans for a Dogecoin-themed rollercoaster on Twitter ",
+        "usdLiquidityMeasure": "0.8469550690006778991128101026445144",
+        "usdVolume": "13788.21501385278351054565464054763"
+      }
+    }
+  },
+  "createdAt": "2025-08-06T05:40:34.399Z",
+  "outcomes": [
+    "Yes",
+    "No"
+  ]
+},
+
+    {
+  "id": "combined-0xffc9820559239c245ee62d82b122a8f3f64a2ab4a4fc5299d8bc570b65cbd57d-0x4adff28532f94a8d97b3a603e3eb6273ee9fb0c2",
+  "title": "Will xDai’s STAKE token have a circulating market cap exceeding $100 million by the end of 2025?",
+  "category": "cryptocurrency",
+  "combinedVolume": 816854.0625360759,
+  "matchConfidence": 0.95,
+  "polymarketMarket": {
+    "id": "0xffc9820559239c245ee62d82b122a8f3f64a2ab4a4fc5299d8bc570b65cbd57d",
+    "title": "Will xDai’s STAKE token have a circulating market cap exceeding $100 million by the end of 2025?",
+    "originalTitle": "Will xDai’s STAKE token have a circulating market cap exceeding $100 million by the end of 2025?",
+    "volume": 802746.257987,
+    "tradesQuantity": "646",
+    "buysQuantity": "472",
+    "sellsQuantity": "174",
+    "scaledCollateralBuyVolume": "636239.496282",
+    "scaledCollateralSellVolume": "166506.761705",
+    "rawData": {
+      "market": {
+        "creator": "0x91430cad2d3975766499717fa0d66a78d814e5c5",
+        "id": "0xffc9820559239c245ee62d82b122a8f3f64a2ab4a4fc5299d8bc570b65cbd57d",
+        "question": "Lexus Eastbourne Open: Evans vs. Paul - Daniel Evans and Tommy Paul are scheduled to play each other in a Round 2 matchup in the Lexus Eastbourne Open mens singles tournament on June 25, 2025, at 9:30 AM ET.",
+        "questionID": "0xffc9820559239c245ee62d82b122a8f3f64a2ab4a4fc5299d8bc570b65cbd57d"
+      },
+      "orderbook": {
+        "id": "48257633084977603187300165450475946569920866266593797946416150301538288340898",
+        "tradesQuantity": "646",
+        "buysQuantity": "472",
+        "sellsQuantity": "174",
+        "scaledCollateralVolume": "802746.257987",
+        "scaledCollateralBuyVolume": "636239.496282",
+        "scaledCollateralSellVolume": "166506.761705"
+      }
+    }
+  },
+  "omenMarket": {
+    "id": "0x4adff28532f94a8d97b3a603e3eb6273ee9fb0c2",
+    "title": "Will the circulating market cap for xDai’s STAKE be over $100 million at the end of 2025?",
+    "originalTitle": "Will the circulating market cap for xDai’s STAKE be over $100 million at the end of 2025?",
+    "volume": 14107.804549075898,
+    "category": "cryptocurrency",
+    "tradesQuantity": "597",
+    "buysQuantity": "302",
+    "sellsQuantity": "67",
+    "scaledCollateralBuyVolume": "8464.682729445538",
+    "scaledCollateralSellVolume": "5643.12181963036",
+    "rawData": {
+      "market": {
+        "category": "cryptocurrency",
+        "creationTimestamp": "1624480205",
+        "creator": "0x1de6e51e74f11a21784f7073f1dd351a98c944ea",
+        "id": "0x4adff28532f94a8d97b3a603e3eb6273ee9fb0c2",
+        "liquidityMeasure": "45760560673651934719",
+        "outcomeSlotCount": 2,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "scaledCollateralVolume": "14107.804549075898182988",
+        "scaledLiquidityMeasure": "45.760560673651934719",
+        "title": "Will the circulating market cap for xDai’s STAKE be over $100 million at the end of 2021?",
+        "usdLiquidityMeasure": "45.76075040782911014340024953171926",
+        "usdVolume": "14107.80844980208150439263587253167"
+      }
+    }
+  },
+  "createdAt": "2025-08-06T05:40:34.402Z",
+  "outcomes": [
+    "Yes",
+    "No"
+  ]
+}
+
+  ],
+  "metadata": {
+    "polymarketEndpoint": "https://gateway.thegraph.com/api/subgraphs/id/22CoTbEtpv6fURB6moTNfJPWNUPXtiFGRA8h1zajMha3",
+    "omenEndpoint": "https://gateway.thegraph.com/api/subgraphs/id/9fUVQpFwzpdWS9bq5WkAnmKbNNcoBwatMR4yZq81pbbz",
+    "orderbookEndpoint": "https://api.studio.thegraph.com/query/117667/polybets-orderbook/version/latest",
+    "combinedPolymarketData": true,
+    "fetchedAt": "2025-08-06T05:40:34.402Z",
+    "orderbooksCount": 10,
+    "hasCombinedMarkets": true
+  }
+}
