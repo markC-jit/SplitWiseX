@@ -1,15 +1,15 @@
-# 🧠 SplitWise X — Unified AI-Powered Prediction Market Aggregator
+#SplitWise X — Unified AI-Powered Prediction Market Aggregator
 
-## 🎯 Problem Statement
+##Problem Statement
 
 Prediction markets today are highly fragmented — liquidity, pricing, and odds are scattered across multiple platforms. Users face major pain points:
 
-- ⏳ **Time wasted** manually comparing odds across platforms
-- 🧮 **Complex math** required to optimize bets
-- 🔓 **Strategies exposed** publicly, risking front-running
-- 🧱 **Wallet fragmentation** between EVM (MetaMask) and non-EVM (Polkadot) ecosystems
+- ⏳ Time wasted** manually comparing odds across platforms
+- 🧮 Complex math** required to optimize bets
+- 🔓 Strategies exposed** publicly, risking front-running
+- 🧱 Wallet fragmentation** between EVM (MetaMask) and non-EVM (Polkadot) ecosystems
 
-## ✅ Our Solution
+##Our Solution
 
 SplitWise X is a cross-chain prediction market aggregator that consolidates liquidity and pricing into a single interface — powered by AI & secured with TEE privacy.
 
